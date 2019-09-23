@@ -4,7 +4,8 @@ import Tasks from './Tasks';
 const Project = sequelize.define('project',{
     id:{
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoincrement: true
     },
     name:{
         type: Sequelize.TEXT

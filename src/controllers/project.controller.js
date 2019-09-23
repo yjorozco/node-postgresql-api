@@ -1,4 +1,31 @@
-export function createProject(req, res){
-    console.log(req.body);
-    res.send('recibido');
+import Project from '../models/Project';
+export async function createProject(req, res){
+    const { name, priority, description, deliverydate} = await req.body;
+    try{
+        let newProject = await Project.create({
+            name,
+            priority,
+            description,
+            deliverydate
+        }, {
+            fields: [
+            'name',
+            'priority',
+            'description',
+            'deliverydate'
+            ]
+        });
+        if(newProject){
+           return res.json({
+                message: 'Project created successfully',
+                data: newProject
+            });
+        } 
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            message: "Something goes wrong",
+            data:{}
+        });
+    }
 }
