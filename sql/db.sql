@@ -12,3 +12,19 @@ CREATE TABLE IF NOT EXISTS tasks(
     done BOOLEAN,
     projectId INTEGER REFERENCES project(id)
 );
+
+INSERT into project(name, priority, description, deliverydate)
+       values('make a web app',1,'using javascript', '2019-05-12');
+INSERT into project(name, priority, description, deliverydate)
+       values('make an app',1,'using dart', '2019-05-13');
+INSERT into project(name, priority, description, deliverydate)
+       values('make a web app',2,'using c++', '2019-05-14');
+
+INSERT into tasks(name, done, projectID)
+     values('download Vuejs', false, 1);
+INSERT into tasks(name, done, projectID)
+     values('Create UI WEB', false, 1);
+INSERT into tasks(name, done, projectID)
+     values('Download flutter', false, 2);
+INSERT into tasks(name, done, projectID)
+     values('Desing UI', false, 2);
