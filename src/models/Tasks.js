@@ -1,7 +1,7 @@
 import Sequelize from 'Sequelize';
 import { sequelize } from '../database/database';
 
-const Tasks = sequelize.define('tasks', {
+const Tasks = sequelize.define('task', {
     id:{
         type: Sequelize.INTEGER,
         primaryKey: true
@@ -12,7 +12,7 @@ const Tasks = sequelize.define('tasks', {
     done:{
         type: Sequelize.BOOLEAN
     },
-    projectId:{
+    projectid:{
         type: Sequelize.INTEGER
     }
 

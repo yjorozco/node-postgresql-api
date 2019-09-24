@@ -4,8 +4,7 @@ import Tasks from './Tasks';
 const Project = sequelize.define('project',{
     id:{
         type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoincrement: true
+        primaryKey: true,     
     },
     name:{
         type: Sequelize.TEXT
@@ -23,6 +22,6 @@ const Project = sequelize.define('project',{
     timestamps:false
 });
 
-Project.hasMany(Tasks, {foreingKey:'projectId',sourceKey:'id'});
-Tasks.belongsTo(Project, {foreingKey: 'projectId', sourceKey:'id'});
+Project.hasMany(Tasks, {foreingKey:'projectid',sourceKey:'id'});
+Tasks.belongsTo(Project, {foreingKey: 'projectid', sourceKey:'id'});
 export default Project;
